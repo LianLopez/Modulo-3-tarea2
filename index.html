@@ -1,40 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/nysl.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <title>index</title>
-</head>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+			crossorigin="anonymous"
+		/>
+		<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+			crossorigin="anonymous"
+		></script>
+		<link rel="stylesheet" href="css/nysl.css" />
 
-<body>
-	<div class="background">
-		<header>
-			<h4 class="text-center p-2">Game schedule</h4>
-		</header>
-		<ul class="list-group">
-			<li class="list-group-item border-dark d-flex text-center align-items-center"><span class="w-100">U3 vs U1 </span><span class="flex-shrink text-center">13 July</span></li>
-			<li class="list-group-item border-dark d-flex text-center align-items-center"><span class="w-100">U2 vs U3</span> <span class="flex-shrink text-center">14 July</span></li>
-			<li class="list-group-item border-dark d-flex text-center align-items-center"><span class="w-100">U1 vs U2</span><span class="flex-shrink text-center">17 July</span></li>
-		</ul>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<title>NYSL App</title>
+	</head>
+
+	<body>
+		<div id="app" class="background">
+			<header>
+				<h4 class="text-center p-2">Game schedule</h4>
+			</header>
+			<div class="background-elements">
+				<div v-for="element in juegos">
+					<div v-bind:mes="element['mes']" class="d-yes juego">
+						<ul class="list-group">
+							<li class="m-2">
+								<button
+									class="list-group-item border-dark d-flex text-center align-items-center w-100 btn-game"
+								>
+									<span class="w-100">U2 vs U3</span>
+									<span class="flex-shrink text-center">14 July</span>
+								</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<footer class="fixed-bottom">
+				<ul class="nav justify-content-around">
+					<li class="nav-item border border-white flex-fill text-center" v-for="element in juegos">
+						<button class="nav-link w-100" href="#" v-bind:id="element['mes']" onclick="mostrar(this)">{{ element["mes"] }}</button>
+					</li>
+				</ul>
+			</footer>
 		</div>
-    <footer class="fixed-bottom">
-        <ul class="nav justify-content-around">
-            <li class="nav-item border border-dark flex-fill text-center">
-                <a class="nav-link" href="#">July</a>
-            </li>
-            <li class="nav-item border border-dark flex-fill text-center">
-                <a class="nav-link" href="#">August</a>
-            </li>
-            <li class="nav-item border border-dark flex-fill text-center">
-                <a class="nav-link" href="#">September</a>
-            </li>
-        </ul>
-    </footer>
-
-</body>
-
+		<script src="game.js"></script>
+		<script src="main.js"></script>
+	</body>
 </html>

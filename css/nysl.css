@@ -1,15 +1,50 @@
-*{
+* {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
-header{
+html,
+body {
+	margin: 0px;
+
+	height: 100%;
+}
+.list-group-item {
+	background-color: rgba(255, 0, 0, 0);
+}
+span {
+	color: #033949;
+	font-size: 1.1em;
+}
+header {
 	background-color: #a4ff4a;
 	color: #033949;
 }
-header>h4{
-	text-shadow: 0.5px 1px 1px black;
+.background {
+	height: 100%;
+	background-image: url("../images/nysl_logo.png");
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center;
+	z-index: -1;
 }
-.background{
-	background-image: url("images/nysl_logo.png");
+.background-elements {
+	height: 100%;
+	background-color: rgba(190, 190, 190, 0.445);
+}
+.nav-link {
+	background-color: #033949;
+	color: #a4ff4a;
+}
+.active {
+	background-color: #a4ff4a;
+	color: #033949;
+	font-size: 1em;
+}
+h4 {
+	margin: 0;
+}
+.btn-game {
+	background-color: rgba(255, 255, 255, 0.856);
 }
