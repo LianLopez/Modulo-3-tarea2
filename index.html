@@ -2,100 +2,87 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-		crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-		crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="css/nysl.css" />
-
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-
-	<title>NYSL App</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/nysl.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>NYSL App</title>
 </head>
 
 <body>
-	<!-- Parte Mobile -->
-	<div id="app" class="background phone-visual">
-		<div class="home background-elements">
-			<header class="fixed-top">
-				<h4 class="text-center p-2">Game schedule</h4>
-			</header>
-			<div class="">
-				<div v-for="(mes, index) in juegos" v-bind:id="mes['mes']" class="juego">
-					<ul class="list-group">
-						<li class="m-2" v-for="(partido, index2) in mes['partidos']">
-							<button v-bind:id="index" v-bind:value="index2"
-								class="list-group-item border-dark d-flex text-center align-items-center w-100 btn-game"
-								onclick="seleccionarPartido(this)">
-								<span class="w-100">{{ partido.equipos }}</span>
-								<div>
-									<span class="flex-shrink text-center">{{ partido.dia }}/{{ partido.mes }}</span>
-								</div>
-							</button>
-						</li>
-					</ul>
-				</div>
-			</div>
-
-			<footer class="fixed-bottom">
-				<ul class="nav justify-content-around">
-					<li class="nav-item border border-white flex-fill text-center" v-for="value in juegos">
-						<button class="nav-link w-100" href="#" v-bind:id="value['mes']" onclick="mostrar(this)">
-							{{ value["mes"] }}
-						</button>
-					</li>
-				</ul>
-			</footer>
-		</div>
-		<div class="juego juegoSeleccionado">
-			<div class="background-elements ">
-				<span></span>
-				<h3 class="text-center">{{ partidoSeleccionado["equipos"] }}</h3>
-				<ul>
-					<li class="d-flex justify-content-between px-4">
-						<span>Date:</span>
-						<span>{{ partidoSeleccionado["dia"] }}/{{ partidoSeleccionado["mes"] }} </span>
-					</li>
-					<li class="d-flex justify-content-between px-4">
-						<span>Time:</span><span>{{ partidoSeleccionado["horario"] }} </span>
-					</li>
-					<li class="d-flex justify-content-between px-4"><span>Ubication:</span><a
-							v-bind:href="partidoSeleccionado['link']" class="stretched-link">{{partidoSeleccionado["ubicacion"]}} </a>
-					</li>
-
-				</ul>
-				<div class="mx-auto" style="width: 125px;">
-					<a v-bind:href="partidoSeleccionado['link']" class="btn btn-primary stretched-link btn-adress">Get
-						directions</a>
-				</div>
-				<footer class="fixed-bottom">
-					<ul class="nav justify-content-around">
-						<li class="nav-item border border-white flex-fill text-center">
-							<button class="nav-link w-100" href="#" id="volver">
-								Back
-							</button>
-						</li>
-					</ul>
-				</footer>
-			</div>
-		</div>
-
-		<script src="js/game.js"></script>
-		<script src="js/main.js"></script>
-		<!-- The core Firebase JS SDK is always required and must be listed first -->
-		<script src="/__/firebase/6.2.2/firebase-app.js"></script>
-
-		<!-- TODO: Add SDKs for Firebase products that you want to use
+    <!-- Parte Mobile -->
+    <div id="app" class="background phone-visual">
+        <div class="home background-elements">
+            <header class="fixed-top">
+                <h4 class="text-center p-2">Game schedule</h4>
+            </header>
+            <div class="">
+                <div v-for="(mes, index) in juegos" v-bind:id="mes['mes']" class="juego">
+                    <ul class="list-group">
+                        <li class="m-2" v-for="(partido, index2) in mes['partidos']">
+                            <button v-bind:id="index" v-bind:value="index2" class="list-group-item border-dark d-flex text-center align-items-center w-100 btn-game" onclick="seleccionarPartido(this)">
+                                <span class="w-100">{{ partido.equipos }}</span>
+                                <div>
+                                    <span class="flex-shrink text-center">{{ partido.dia }}/{{ partido.mes }}</span>
+                                </div>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <footer class="fixed-bottom">
+                <ul class="nav justify-content-around">
+                    <li class="nav-item border border-white flex-fill text-center" v-for="value in juegos">
+                        <button class="nav-link w-100" href="#" v-bind:id="value['mes']" onclick="mostrar(this)">
+                            {{ value["mes"] }}
+                        </button>
+                    </li>
+                </ul>
+            </footer>
+        </div>
+        <div class="juego juegoSeleccionado">
+            <div class="background-elements ">
+                <div class="list-group-item border-dark btn-game">
+                    <span></span>
+                    <h3 class="text-center">{{ partidoSeleccionado["equipos"] }}</h3>
+                    <ul>
+                        <li class="d-flex justify-content-between px-2">
+                            <span>Date:</span>
+                            <span>{{ partidoSeleccionado["dia"] }}/{{ partidoSeleccionado["mes"] }} </span>
+                        </li>
+                        <li class="d-flex justify-content-between px-2">
+                            <span>Time:</span><span>{{ partidoSeleccionado["horario"] }} </span>
+                        </li>
+                        <li class="d-flex justify-content-between px-2"><span>Ubication:</span><a v-bind:href="partidoSeleccionado['link']">{{partidoSeleccionado["ubicacion"]}}</a>
+                        </li>
+                    </ul>
+                    <div class="mx-auto" style="width: 125px;">
+                        <a v-bind:href="partidoSeleccionado['link']" class="btn btn-primary btn-adress">Get
+                            directions</a>
+                    </div>
+                </div>
+                <footer class="fixed-bottom">
+                    <ul class="nav justify-content-around">
+                        <li class="nav-item border border-white flex-fill text-center">
+                            <button class="nav-link w-100" href="#" id="volver">
+                                Back
+                            </button>
+                        </li>
+                    </ul>
+                </footer>
+            </div>
+        </div>
+        <script src="js/game.js"></script>
+        <script src="js/main.js"></script>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="/__/firebase/6.2.2/firebase-app.js"></script>
+        <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#reserved-urls -->
-
-		<!-- Initialize Firebase -->
-		<script src="/__/firebase/init.js"></script>
+        <!-- Initialize Firebase -->
+        <script src="/__/firebase/init.js"></script>
 </body>
 
 </html>
