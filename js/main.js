@@ -2,7 +2,8 @@ var app = new Vue({
 	el: "#app",
 	data: {
 		juegos: {},
-		partidoSeleccionado: {}
+		partidoSeleccionado: {},
+		ventana: "home"
 	}
 });
 
