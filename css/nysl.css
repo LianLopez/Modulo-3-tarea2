@@ -1,74 +1,144 @@
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 1em;
-}
-.phone-visual {
-	display: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 1em;
 }
 
 @media (max-width: 575.98px) {
-  
-  .desktop-visual{
-    display: none;
-  }
-	.phone-visual {
-		display: block;
-	}
-	html,
-	body {
-		margin: 0px;
 
-		height: 100%;
-	}
-	.list-group-item {
-		background-color: rgba(255, 0, 0, 0);
-	}
-	span {
-		color: #033949;
-		font-size: 1.1em;
-	}
-	header {
-		background-color: #a4ff4a;
-		color: #033949;
-	}
-	.background {
-		height: 100%;
-		background-image: url("../images/nysl_logo.png");
-		background-attachment: fixed;
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: 100%;
-		z-index: -1;
-	}
-	.background-elements {
-		padding-top: 40px;
-		height: 100%;
-		background-color: rgba(190, 190, 190, 0.7);
-	}
-	.nav-link {
-		background-color: #033949;
-		color: #a4ff4a;
-	}
-	.active {
-		background-color: #a4ff4a;
-		color: #033949;
-		font-size: 1em;
-	}
-	h4 {
-		margin: 0;
-	}
-	.btn-game {
-		background-color: rgba(255, 255, 255, 0.856);
-	}
-	.juegoSeleccionado {
-		background-image: url("../images/nysl_logo.png");
-		background-attachment: fixed;
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: 100%;
-		height: 100%;
-	}
+    html,
+    body {
+        margin: 0px;
+
+        height: 100%;
+    }
+
+    .list-group-item {
+        background-color: rgba(255, 0, 0, 0);
+    }
+
+    span {
+        color: #033949;
+        font-size: 1.1em;
+    }
+
+    header {
+        background-color: #a4ff4a;
+        color: #033949;
+    }
+
+    .background {
+        height: 100%;
+        background-image: url("../images/nysl_logo.png");
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        z-index: -1;
+    }
+
+    .background-elements {
+        padding-top: 40px;
+        height: 100%;
+        background-color: rgba(190, 190, 190, 0.7);
+    }
+
+    .nav-link {
+        background-color: #033949;
+        color: #a4ff4a;
+    }
+
+    .active {
+        background-color: #a4ff4a;
+        color: #033949;
+        font-size: 1em;
+    }
+
+    h4 {
+        margin: 0;
+    }
+
+    .btn-game {
+        background-color: rgba(255, 255, 255, 0.856);
+    }
+
+    .juegoSeleccionado {
+        background-image: url("../images/nysl_logo.png");
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        height: 100%;
+    }
+}
+
+@media only screen and (orientation: landscape) {
+
+
+    html,
+    body {
+        margin: 0px;
+
+        height: 100%;
+    }
+
+    .list-group-item {
+        background-color: rgba(255, 0, 0, 0);
+    }
+
+    span {
+        color: #033949;
+        font-size: 1.1em;
+    }
+
+    header {
+        background-color: #a4ff4a;
+        color: #033949;
+    }
+
+    .background {
+        height: 100%;
+        background-image: url("../images/nysl_logo.png");
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        z-index: -1;
+    }
+
+    .background-elements {
+        padding-top: 40px;
+        height: 100%;
+        background-color: rgba(190, 190, 190, 0.7);
+    }
+
+    .nav-link {
+        background-color: #033949;
+        color: #a4ff4a;
+    }
+
+    .active {
+        background-color: #a4ff4a;
+        color: #033949;
+        font-size: 1em;
+    }
+
+    h4 {
+        margin: 0;
+    }
+
+    .btn-game {
+        background-color: rgba(255, 255, 255, 0.856);
+    }
+
+    .juegoSeleccionado {
+        background-image: url("../images/nysl_logo.png");
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        height: 100%;
+    }
 }
